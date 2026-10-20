@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eshaan Khan | Portfolio</title>
+  <link rel="stylesheet" href="intro.css">
+</head>
+<style>
+
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --light-blue: #eff6ff;
+    --text-dark: #0f172a;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --border: #dbeafe;
+    background-color: #93c5fd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background:
+        radial-gradient(ellipse at top left, #dbeafe 0%, transparent 40%),
+        linear-gradient(135deg, #f8fbff 0%, #ffffff 55%, #eff6ff 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    padding: 55px 20px;
+    line-height: 1.7;
+}
+
+/* ===== Main Portfolio Card ===== */
+.intro {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 55px 65px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(219, 234, 254, 0.9);
+    border-radius: 28px;
+    box-shadow:
+        0 25px 70px rgba(37, 99, 235, 0.09),
+        0 5px 20px rgba(15, 23, 42, 0.03);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative top line */
+.intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        #1d4ed8,
+        #3b82f6,
+        #93c5fd
+    );
+}
+
+/* ===== Profile Photo ===== */
+.photo {
+    width: 155px;
+    height: 155px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid var(--white);
+    outline: 3px solid #bfdbfe;
+    margin: 0 auto 25px;
+    display: block;
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
+}
+
+/* ===== Name ===== */
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+/* ===== Portfolio Link ===== */
+.subtitle {
+    margin-bottom: 20px;
+}
+
+.subtitle a {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 0.98rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 17px;
+    background: var(--light-blue);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.subtitle a:hover {
+    color: var(--white);
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* ===== Project Label ===== */
+.intro > p:not(.subtitle) {
+    display: inline-block;
+    color: var(--primary-dark);
+    background: #f1f5ff;
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+/* ===== Content Sections ===== */
+section {
+    text-align: left;
+    margin: 25px 0;
+    padding: 28px 30px;
+    background: #f8fbff;
+    border: 1px solid #e5efff;
+    border-radius: 18px;
+    transition: all 0.3s ease;
+}
+
+section:hover {
+    background: var(--white);
+    border-color: #bfdbfe;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.07);
+    transform: translateY(-2px);
+}
+
+/* ===== Section Headings ===== */
+section h2 {
+    position: relative;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 17px;
+    padding-left: 16px;
+}
+
+section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 4px;
+    height: 25px;
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+section p {
+    color: #475569;
+    font-size: 0.96rem;
+    line-height: 1.95;
+}
+
+/* ===== Start Project Button ===== */
+.start-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 16px 35px;
+    color: var(--white);
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.23);
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.32);
+    transform: translateY(-3px);
+}
+
+.start-button:active {
+    transform: translateY(0);
+}
+
+/* ===== Keyboard Accessibility ===== */
+a:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 25px 14px;
+    }
+
+    .intro {
+        padding: 40px 25px;
+        border-radius: 22px;
+    }
+
+    .photo {
+        width: 130px;
+        height: 130px;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+    }
+
+    section {
+        padding: 23px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .intro {
+        padding: 35px 17px;
+        border-radius: 18px;
+    }
+
+    .photo {
+        width: 115px;
+        height: 115px;
+    }
+
+    section {
+        padding: 20px 16px;
+        margin: 18px 0;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    section p {
+        font-size: 0.9rem;
+    }
+
+    .start-button {
+        width: 100%;
+        padding: 15px 20px;
+    }
+}
+
+
+</style>
+<body>
+  <!--
+    SAMPLE FIRST PAGE.
+    Replace this file with YOUR OWN introduction / photo / portfolio page.
+    The only thing you must keep is the "Start Project" link near the bottom.
+  -->
+  <main class="intro">
+    <img class="photo" src="WhatsApp Image 2026-08-20 at 3.14.39 PM.jpeg" alt="">
+    <h1>Eshaan Khan</h1>
+    <p class="subtitle"><a href="https://portfolio-mauve-seven-dhnb9h6lfn.vercel.app/">View my portfilo</a></p>
+    <p>ILS Programming Project</p>
+
+    <section>
+      <h2>Introduction</h2>
+     
+
+<p>
+
+My name is Eshaan Khan, and I am a B.Com student at Amar Singh College, Srinagar. Alongside my academic studies, I am pursuing programming and developing my technical skills at ILS.<br/>
+
+I am passionate about Artificial Intelligence, Machine Learning, and Data Science. I am continuously learning new technologies, improving my programming skills, and working on practical projects to gain real-world experience. My goal is to build innovative solutions and grow professionally in the technology field.<br/>
+   
+
+
+<b>About My Project</b><br/>
+
+My project, AI-Based Customer Complaint Classifier, is a machine learning project designed to automatically analyze and categorize customer complaints.<br/>
+
+Businesses often receive numerous customer complaints, making manual management time-consuming and difficult. This project aims to simplify the process by using Python and machine learning techniques to classify complaints into relevant categories.<br/>
+
+The main objective is to reduce manual effort, organize customer feedback, and help businesses manage complaints more efficiently. Through this project, I aim to demonstrate how Artificial Intelligence and Machine Learning can be applied to solve real-world problems.<br/>
+
+<b>Conclusion</b><br/>
+
+This project represents an important step in my programming journey. It allows me to apply my technical knowledge to a practical problem while continuing to learn, improve my skills, and explore the possibilities of Artificial Intelligence.
+
+
+
+
+
+
+</p>
+
+    </section>
+
+  
+
+    <!-- THE LINK THAT STARTS THE PROJECT: -->
+    <a class="start-button" href="/dashboard">Start Project &rarr;</a>
+  </main>
+</body>
+</html>

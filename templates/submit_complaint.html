@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Submit Complaint{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+  <h1>Submit a Complaint</h1>
+  <p class="muted">Tell us what went wrong. The system will suggest a category, a priority and the team that should help.</p>
+</div>
+
+<section class="card form-card">
+  {% if errors %}
+    <div class="alert alert-error">
+      <strong>Please fix the following:</strong>
+      <ul>
+        {% for error in errors %}<li>{{ error }}</li>{% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <form method="post" action="{{ url_for('submit_complaint') }}">
+    <div class="form-group">
+      <label for="customer_name">Customer name <span class="muted">(optional)</span></label>
+      <input type="text" id="customer_name" name="customer_name" maxlength="80"
+             placeholder="Your name" value="{{ form.customer_name }}">
+    </div>
+
+    <div class="form-group">
+      <label for="title">Complaint title <span class="muted">(optional)</span></label>
+      <input type="text" id="title" name="title" maxlength="120"
+             placeholder="Example: Charged twice for my order" value="{{ form.title }}">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Complaint description <span class="required">*</span></label>
+      <textarea id="description" name="description" rows="6" maxlength="2000"
+                placeholder="Describe the problem in detail...">{{ form.description }}</textarea>
+      <small class="muted">Required. Between 10 and 2000 characters.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Complaint</button>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% from "macros.html" import priority_badge, status_badge, source_badge %}
+{% block title %}Complaint {{ complaint['Complaint ID'] }}{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+  <h1>Complaint {{ complaint['Complaint ID'] }}</h1>
+  <p class="muted">{{ complaint['Complaint Title'] }}</p>
+</div>
+
+<section class="details-grid">
+  <div class="card">
+    <h2>Complaint Information</h2>
+    <dl class="details-list">
+      <dt>Customer</dt><dd>{{ complaint['Customer Name'] }}</dd>
+      <dt>Submitted</dt><dd>{{ complaint['Submission Date'] or 'Unknown' }}</dd>
+      <dt>Category</dt><dd>{{ complaint['Predicted Category'] }}</dd>
+      <dt>Priority</dt><dd>{{ priority_badge(complaint['Priority']) }}</dd>
+      <dt>Assigned team</dt><dd>{{ complaint['Assigned Team'] }}</dd>
+      <dt>Status</dt><dd>{{ status_badge(complaint['Status']) }}</dd>
+      <dt>Source</dt><dd>{{ source_badge(complaint['Source']) }}</dd>
+    </dl>
+    <h3>Description</h3>
+    <p class="description-text">{{ complaint['Complaint Description'] or 'No description saved.' }}</p>
+  </div>
+
+  <div class="card">
+    <h2>Update Status</h2>
+    <form method="post" action="{{ url_for('update_status', complaint_id=complaint['Complaint ID']) }}">
+      <div class="form-group">
+        <label for="status">New status</label>
+        <select id="status" name="status">
+          {% for item in STATUSES %}<option value="{{ item }}" {{ 'selected' if complaint['Status'] == item }}>{{ item }}</option>{% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Status</button>
+    </form>
+    <p class="muted small">The category and priority were suggested by keyword rules and may need a person's review.</p>
+  </div>
+</section>
+
+<div class="button-row">
+  <a class="btn btn-secondary" href="{{ url_for('complaints') }}">&larr; Back to All Complaints</a>
+</div>
+{% endblock %}

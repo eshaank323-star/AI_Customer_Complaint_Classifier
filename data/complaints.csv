@@ -1,0 +1,23 @@
+﻿Complaint ID,Customer Name,Complaint Title,Complaint Description,Predicted Category,Priority,Assigned Team,Status,Submission Date,Source
+CMP-0001,Aarav Mehta,Charged twice for one order,I was charged twice for my order #4521. Please refund the extra payment as soon as possible.,Billing,High,Billing Support Team,In Progress,2026-09-21 10:15,Sample
+CMP-0002,Sara Ali,Question about invoice,"How do I download my invoice for last month? Just a general question, no rush.",Billing,Low,Billing Support Team,Resolved,2026-09-22 14:30,Sample
+CMP-0003,Daniel Brown,Wrong amount on my bill,The amount on my monthly bill is higher than the price I was told. Please check the charges.,Billing,Medium,Billing Support Team,Pending,2026-09-25 09:05,Sample
+CMP-0004,Priya Nair,Unauthorized transaction,There is an unauthorized transaction on my credit card linked to my account. Please look into this urgently.,Billing,High,Billing Support Team,In Progress,2026-09-27 16:45,Sample
+CMP-0005,Omar Farooq,Refund not credited,I returned my item two weeks ago but the refund has still not been credited to my account.,Billing,Medium,Billing Support Team,Resolved,2026-09-28 11:20,Sample
+CMP-0006,Neha Kapoor,App keeps crashing,The application keeps crashing every time I open the payment page.,Technical,High,Technical Support Team,In Progress,2026-09-30 08:50,Sample
+CMP-0007,John Smith,Cannot log in,I cannot log in to my account. It says my password is wrong even after resetting it. I need access urgently.,Technical,High,Technical Support Team,Pending,2026-10-02 19:10,Sample
+CMP-0008,Fatima Khan,Website loads slowly,The website is a little slow when I open the product page. It is a minor issue.,Technical,Low,Technical Support Team,Resolved,2026-10-03 13:00,Sample
+CMP-0009,Rahul Verma,Error message on profile page,I get an error message when I try to update my profile settings. Please fix this bug.,Technical,Medium,Technical Support Team,Pending,2026-10-05 10:40,Sample
+CMP-0010,Emily Clark,Software update fails,The latest software update fails to install on my laptop.,Technical,Medium,Technical Support Team,Resolved,2026-10-06 15:25,Sample
+CMP-0011,Kabir Singh,Parcel not arrived,My parcel has not arrived and the tracking page has shown the same status for ten days.,Delivery,Medium,Delivery Support Team,Pending,2026-10-07 12:35,Sample
+CMP-0012,Anita Desai,Package damaged,My package arrived damaged and one item is missing from the box.,Delivery,Medium,Delivery Support Team,Resolved,2026-10-08 17:05,Sample
+CMP-0013,Liam Wilson,Delivery was very late,My order was delayed again and again. This is the third time this month. Please escalate.,Delivery,High,Delivery Support Team,In Progress,2026-10-09 09:30,Sample
+CMP-0014,Zara Hussain,Change delivery address,I would like to know whether I can change the delivery address for my next order.,Delivery,Low,Delivery Support Team,Resolved,2026-10-09 18:15,Sample
+CMP-0015,Michael Lee,Unhelpful support staff,The customer support staff was unhelpful and rude when I called about my problem.,Service,Medium,Customer Service Team,Pending,2026-10-10 11:55,Sample
+CMP-0016,Sneha Iyer,No reply to my emails,I sent three emails to your support team and received no reply for two weeks.,Service,Medium,Customer Service Team,In Progress,2026-10-11 14:20,Sample
+CMP-0017,Chris Evans,Feedback on service,I just wanted to give some feedback. The agent who helped me was very friendly.,Service,Low,Customer Service Team,Resolved,2026-10-12 10:10,Sample
+CMP-0018,Ayesha Siddiqui,Internet is completely down,The internet service has been completely down since morning and our whole office cannot work. This is an emergency.,Technical,High,Technical Support Team,Pending,2026-10-13 07:45,Sample
+CMP-0019,Hannah Wright,Staff behaviour at the counter,The staff member at the service counter ignored me for twenty minutes and showed a bad attitude.,Service,Medium,Customer Service Team,Resolved,2026-10-13 16:00,Sample
+CMP-0020,Anonymous,Not sure where this belongs,"Hello, I have a problem but I am not sure what to write here.",Service,Medium,Customer Service Team,Pending,2026-10-14 09:00,Sample
+CMP-0021,eshan,billing,got my bills twice,Billing,Medium,Billing Support Team,Pending,2026-10-16 16:15,User
+CMP-0022,aqib,order delay,order not recieved from last 4 days,Delivery,Medium,Delivery Support Team,Pending,2026-10-16 16:32,User

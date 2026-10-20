@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% from "macros.html" import priority_badge, status_badge %}
+{% block title %}Complaint Result{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+  <h1>Complaint Received</h1>
+  <p class="muted">Complaint ID: <strong>{{ complaint['Complaint ID'] }}</strong> &middot; Saved on {{ complaint['Submission Date'] }}</p>
+</div>
+
+<section class="result-grid">
+  <div class="card result-card">
+    <span class="stat-label">Predicted Category</span>
+    <span class="result-value">{{ complaint['Predicted Category'] }}</span>
+  </div>
+  <div class="card result-card">
+    <span class="stat-label">Priority</span>
+    <span class="result-value">{{ priority_badge(complaint['Priority']) }}</span>
+  </div>
+  <div class="card result-card">
+    <span class="stat-label">Recommended Support Team</span>
+    <span class="result-value">{{ complaint['Assigned Team'] }}</span>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Why was this result chosen?</h2>
+  <p><strong>Category:</strong> {{ analysis.category_reason }}</p>
+  <p><strong>Priority:</strong> {{ analysis.priority_reason }}</p>
+  {% if analysis.matched_keywords %}
+    <p class="chips">
+      {% for keyword in analysis.matched_keywords %}<span class="chip">{{ keyword }}</span>{% endfor %}
+    </p>
+  {% endif %}
+  <div class="alert alert-info">{{ analysis.disclaimer }}</div>
+</section>
+
+<section class="card">
+  <h2>Your Complaint</h2>
+  <p><strong>Customer:</strong> {{ complaint['Customer Name'] }}</p>
+  <p><strong>Title:</strong> {{ complaint['Complaint Title'] }}</p>
+  <p class="description-text">{{ complaint['Complaint Description'] }}</p>
+  <p><strong>Status:</strong> {{ status_badge(complaint['Status']) }}</p>
+</section>
+
+<div class="button-row">
+  <a class="btn btn-primary" href="{{ url_for('complaint_details', complaint_id=complaint['Complaint ID']) }}">View Complaint Details</a>
+  <a class="btn btn-secondary" href="{{ url_for('submit_complaint') }}">Submit Another Complaint</a>
+</div>
+{% endblock %}

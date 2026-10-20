@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% from "macros.html" import complaint_table %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-heading">
+  <h1>Dashboard</h1>
+  <p class="muted">A quick overview of all saved complaints.</p>
+</div>
+
+<section class="stats-grid">
+  <div class="stat-card">
+    <span class="stat-label">Total Complaints</span>
+    <span class="stat-number">{{ stats.total }}</span>
+  </div>
+  <div class="stat-card stat-high">
+    <span class="stat-label">High Priority</span>
+    <span class="stat-number">{{ stats.high_priority }}</span>
+  </div>
+  <div class="stat-card stat-pending">
+    <span class="stat-label">Pending</span>
+    <span class="stat-number">{{ stats.pending }}</span>
+  </div>
+  <div class="stat-card stat-resolved">
+    <span class="stat-label">Resolved</span>
+    <span class="stat-number">{{ stats.resolved }}</span>
+    <span class="stat-note">{{ stats.resolved_percent }}% of all complaints</span>
+  </div>
+</section>
+
+<section class="charts-grid">
+  <div class="card chart-card">
+    <img src="{{ url_for('static', filename='charts/' ~ chart_files.category) }}?v={{ cache_bust }}" alt="Bar chart of complaints by category">
+  </div>
+  <div class="card chart-card">
+    <img src="{{ url_for('static', filename='charts/' ~ chart_files.priority) }}?v={{ cache_bust }}" alt="Bar chart of complaints by priority">
+  </div>
+  <div class="card chart-card">
+    <img src="{{ url_for('static', filename='charts/' ~ chart_files.status) }}?v={{ cache_bust }}" alt="Pie chart of complaint status">
+  </div>
+</section>
+
+<section class="card">
+  <div class="card-header">
+    <h2>Recent Complaints</h2>
+    <a class="link-button" href="{{ url_for('complaints') }}">View all</a>
+  </div>
+  {% if recent %}
+    {{ complaint_table(recent, false) }}
+  {% else %}
+    <p class="empty-message">No complaints have been saved yet.
+      <a href="{{ url_for('submit_complaint') }}">Submit the first complaint</a>.</p>
+  {% endif %}
+</section>
+{% endblock %}

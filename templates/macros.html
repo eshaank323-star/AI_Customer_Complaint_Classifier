@@ -1,0 +1,51 @@
+{# Small reusable pieces used by several pages. #}
+
+{% macro priority_badge(priority) -%}
+<span class="badge badge-{{ priority|lower }}">{{ priority }}</span>
+{%- endmacro %}
+
+{% macro status_badge(status) -%}
+<span class="badge status-{{ status|lower|replace(' ', '-') }}">{{ status }}</span>
+{%- endmacro %}
+
+{% macro source_badge(source) -%}
+<span class="badge source-{{ source|lower }}">{{ source }}</span>
+{%- endmacro %}
+
+{# A table of complaints. Used on the dashboard and on the All Complaints page. #}
+{% macro complaint_table(complaints, show_source=true) -%}
+<div class="table-wrap">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Customer</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Priority</th>
+        <th>Team</th>
+        <th>Status</th>
+        <th>Date</th>
+        {% if show_source %}<th>Source</th>{% endif %}
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in complaints %}
+      <tr>
+        <td><strong>{{ c['Complaint ID'] }}</strong></td>
+        <td>{{ c['Customer Name'] }}</td>
+        <td>{{ c['Complaint Title'] }}</td>
+        <td>{{ c['Predicted Category'] }}</td>
+        <td>{{ priority_badge(c['Priority']) }}</td>
+        <td>{{ c['Assigned Team'] }}</td>
+        <td>{{ status_badge(c['Status']) }}</td>
+        <td class="nowrap">{{ c['Submission Date'] }}</td>
+        {% if show_source %}<td>{{ source_badge(c['Source']) }}</td>{% endif %}
+        <td><a class="link-button" href="{{ url_for('complaint_details', complaint_id=c['Complaint ID']) }}">View</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{%- endmacro %}

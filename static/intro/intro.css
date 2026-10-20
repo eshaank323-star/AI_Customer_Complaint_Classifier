@@ -1,0 +1,9 @@
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #FBF7EE; color: #1F2937; line-height: 1.6; }
+.intro { max-width: 720px; margin: 40px auto; padding: 32px 24px; background: #FFFFFF; border: 1px solid #E5DFD0; border-radius: 16px; box-shadow: 0 2px 8px rgba(31, 41, 55, 0.08); text-align: center; }
+.photo { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid #2F6FDE; }
+h1 { margin: 16px 0 0; }
+.subtitle { color: #6B7280; margin-top: 4px; }
+section { text-align: left; margin-top: 24px; }
+h2 { color: #1F4FA8; font-size: 1.2rem; }
+.start-button { display: inline-block; margin-top: 28px; padding: 12px 28px; background: #2F6FDE; color: #FFFFFF; font-weight: 600; text-decoration: none; border-radius: 8px; }
+.start-button:hover { background: #1F4FA8; }
